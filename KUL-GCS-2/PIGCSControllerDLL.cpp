@@ -35,7 +35,7 @@
 #include <locale>
 #include <algorithm>
 
-const char* PIGCSControllerDLLDevice::DeviceName_ = "PI_GCSController_DLL";
+const char* PIGCSControllerDLLDevice::DeviceName_ = "PI_GCSController_DLL vKUL";
 const char* PIGCSControllerDLLDevice::PropName_ = "DLL Name";
 const char* PIGCSControllerDLLDevice::PropInterfaceType_ = "Interface Type";
 const char* PIGCSControllerDLLDevice::PropInterfaceParameter_ = "Interface Parameter";
@@ -98,7 +98,7 @@ void PIGCSControllerDLLDevice::CreateProperties()
    CreateProperty(MM::g_Keyword_Name, DeviceName_, MM::String, true);
 
    // Description
-   CreateProperty(MM::g_Keyword_Description, "Physik Instrumente (PI) GCS DLL Adapter", MM::String, true);
+   CreateProperty(MM::g_Keyword_Description, "Physik Instrumente (PI) GCS DLL Adapter vKUL", MM::String, true);
 
    CPropertyAction* pAct;
 
@@ -382,6 +382,10 @@ int PIGCSControllerDLL::LoadDLL(const std::string& dllName)
         dllPrefix_ = "C866_";
         gcs2_ = false;
     }
+	else if (ci_find(dllName, "PI_GCS2_DLL") != std::string::npos)
+    {
+        dllPrefix_ = "PI_";
+    }
 
 #ifdef WIN32
     module_ = LoadLibrary(dllName.c_str());
@@ -571,7 +575,8 @@ int PIGCSControllerDLL::ConnectRS232(const std::string &interfaceParameter)
 
 int PIGCSControllerDLL::ConnectUSB(const std::string&  interfaceParameter)
 {
-	if (ConnectUSB_ == NULL || EnumerateUSB_)
+	//if (ConnectUSB_ == NULL || EnumerateUSB_)
+	if (ConnectUSB_ == NULL || EnumerateUSB_ == NULL)
 		return DEVICE_NOT_SUPPORTED;
 
 	char szDevices[128*80+1];

@@ -29,7 +29,7 @@
 #include <sstream>
 
 
-const char* PIGCSControllerComDevice::DeviceName_ = "PI_GCSController";
+const char* PIGCSControllerComDevice::DeviceName_ = "PI_GCSController vKUL";
 const char* PIGCSControllerComDevice::UmToDefaultUnitName_ = "um in default unit";
 
 PIGCSControllerComDevice::PIGCSControllerComDevice()
@@ -79,7 +79,7 @@ void PIGCSControllerComDevice::CreateProperties()
    CreateProperty(MM::g_Keyword_Name, DeviceName_, MM::String, true);
 
    // Description
-   CreateProperty(MM::g_Keyword_Description, "Physik Instrumente (PI) GCS DLL Adapter", MM::String, true);
+   CreateProperty(MM::g_Keyword_Description, "Physik Instrumente (PI) GCS DLL Adapter vKUL", MM::String, true);
 
    CPropertyAction* pAct;
 

@@ -25,7 +25,7 @@
 #include "PIXYStage_DLL.h"
 #include "Controller.h"
 
-const char* PIXYStage::DeviceName_ = "PIXYStage";
+const char* PIXYStage::DeviceName_ = "PIXYStage vKUL";
 
 const char* g_PI_XYStageAxisXName = "Axis X: Name";
 const char* g_PI_XYStageAxisXStageType = "Axis X: Stage";
@@ -90,7 +90,7 @@ void PIXYStage::CreateProperties()
    CreateProperty(MM::g_Keyword_Name, DeviceName_, MM::String, true);
 
    // Description
-   CreateProperty(MM::g_Keyword_Description, "Physik Instrumente (PI) GCS DLL Adapter", MM::String, true);
+   CreateProperty(MM::g_Keyword_Description, "Physik Instrumente (PI) GCS DLL Adapter vKUL", MM::String, true);
 
    CPropertyAction* pAct;
 

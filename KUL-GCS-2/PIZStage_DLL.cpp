@@ -25,7 +25,7 @@
 #include "PIZStage_DLL.h"
 #include "Controller.h"
 
-const char* PIZStage::DeviceName_ = "PIZStage";
+const char* PIZStage::DeviceName_ = "PIZStage vKUL";
 const char* g_PI_ZStageAxisName = "Axis";
 const char* g_PI_ZStageAxisLimitUm = "Limit_um";
 const char* g_PI_ZStageInvertTravelRange = "Invert travel range";
@@ -70,7 +70,7 @@ PIZStage::PIZStage()
    CreateProperty(MM::g_Keyword_Name, DeviceName_, MM::String, true);
 
    // Description
-   CreateProperty(MM::g_Keyword_Description, "Physik Instrumente (PI) GCS DLL Adapter", MM::String, true);
+   CreateProperty(MM::g_Keyword_Description, "Physik Instrumente (PI) GCS DLL Adapter vKUL", MM::String, true);
 
    CPropertyAction* pAct;
 

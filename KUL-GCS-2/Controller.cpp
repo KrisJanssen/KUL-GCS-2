@@ -104,14 +104,15 @@ int PIController::InitStage(const std::string& axisName, const std::string& stag
             return GetTranslatedError();
         }
     }
-    if (HasINI())
+	// TODO: Figure out why INI results in Error code 2.
+    /*if (HasINI())
     {
         if (!INI(axisName))
         {
             return GetTranslatedError();
         }
 
-    }
+    }*/
     if (HasSVO())
     {
         if (!SVO(axisName, TRUE))
